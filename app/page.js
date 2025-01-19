@@ -1,12 +1,13 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-const basePath = ""; 
+const basePath = "/oztrump"; 
 export default function Home() {
   const audioRef = useRef(null);
-  const [currentSong, setCurrentSong] = useState(`${basePath}/music/yasasin.mp3`) // Varsayılan şarkı
+  const [currentSong, setCurrentSong] = useState(`${basePath}/music/yasasin.mp3`); // Varsayılan şarkı
   const [isPlaying, setIsPlaying] = useState(false); // Şarkı durumu (çalar/durur)
-
+  
+  
   useEffect(() => {
     // Sayfa yüklendiğinde şarkıyı çalmaya çalışır
     const playAudio = async () => {
@@ -16,10 +17,10 @@ export default function Home() {
         console.log("AutoPlay engellendi: Kullanıcı etkileşimi bekleniyor.");
       }
     };
-
+  
     playAudio();
   }, [currentSong, isPlaying]); // Şarkı değiştiğinde veya oynatma durumu değiştiğinde
-
+  
   const handlePlayPause = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -28,15 +29,16 @@ export default function Home() {
     }
     setIsPlaying(!isPlaying);
   };
-
+  
   const handleSongChange = (song) => {
     setCurrentSong(song); // Şarkıyı değiştir
     setIsPlaying(true); // Yeni şarkıyı çalmaya başla
     if (audioRef.current) {
       audioRef.current.load(); // Yeni şarkıyı yükle
+      audioRef.current.play(); // Yeni şarkıyı çal
     }
   };
-
+  
   return (
     <div style={styles.container}>
       {/* Üstteki uyarı şeridi */}

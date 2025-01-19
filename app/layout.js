@@ -15,7 +15,7 @@ export const metadata = {
   title: "ÖZ TRUMP COIN",
   description: "OCAK ÜYESİ TRUMP!",
   icons: {
-    icon: "/favicon.ico", // Doğru favicon yolu
+    icon: "/oztrump/favicon.ico", // Doğru favicon yolu
   },
 };
 
