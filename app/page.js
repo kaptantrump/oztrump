@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-const basePath = "/oztrump"; 
+const basePath = ""; 
 export default function Home() {
   const audioRef = useRef(null);
   const [currentSong, setCurrentSong] = useState(`${basePath}/music/yasasin.mp3`) // Varsayılan şarkı
