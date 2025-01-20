@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-const basePath = "/oztrump"; 
+const basePath = ""; 
 export default function Home() {
   const audioRef = useRef(null);
   const [currentSong, setCurrentSong] = useState(`${basePath}/music/yasasin.mp3`); // Varsayılan şarkı
@@ -111,7 +111,7 @@ export default function Home() {
         <p> İşlemler yalnızca ocağın adresi üzerinden gerçekleştirilir: Ca: Dbvp1hZVt79DDcqv1vCDrBYd9qxTS9Mo3aFFeVULpump </p>
       </div>
 
-      {/* Orta kısımda ek görseller */}
+      {/* Orta kısımda ilk ek görseller */}
       <section style={styles.gallery}>
         <Image src={`${basePath}/5.png`} alt="Gallery 3" width={200} height={150} />
         <p style={styles.description}>EN BÜYÜK O MU BİLMİYORUM AMA ÇOK BÜYÜK! ✊</p>
@@ -123,7 +123,7 @@ export default function Home() {
         <p>(Yazılım bilgim bitti beyler kusura bakmayın.)</p>
       </section>
 
-      {/* Orta kısımda ek görseller */}
+      {/* Orta kısımda ikinci ek görseller */}
       <section style={styles.gallery}>
         <p style={styles.description}>İMPARATOOOOOOORRR</p>
       </section>
@@ -303,6 +303,50 @@ const styles = {
     justifyContent: "left",
     gap: "20px",
     marginTop: "20px",
+  },
+  "@media (max-width: 768px)": {
+    logoText: {
+      fontSize: "2rem",
+    },
+    header: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    main: {
+      flexDirection: "column",
+      marginTop: "50px",
+    },
+    title: {
+      fontSize: "2rem",
+    },
+    subtitle: {
+      fontSize: "1rem",
+    },
+    buyButton: {
+      padding: "8px 16px",
+    },
+    gallery: {
+      gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+    },
+  },
+  "@media (max-width: 480px)": {
+    logoText: {
+      fontSize: "1.5rem",
+    },
+    header: {
+      padding: "5px",
+      gap: "5px",
+    },
+    title: {
+      fontSize: "1.5rem",
+    },
+    buyButton: {
+      padding: "5px 10px",
+      fontSize: "0.8rem",
+    },
+    gallery: {
+      gap: "10px",
+    },
   },
 
 };
